@@ -1,0 +1,43 @@
+# Eve Lurie
+# Schedule Planner
+x = open('Calendar')
+# Imports text file as a calender
+# How to run program
+print("Hello, welcome to my program! Would you like to-")
+print("1: Add appointment")
+print("2: Search by topic")
+print("3: Search by day")
+print("4: Search by hour")
+print("5: Print entire calender")
+a = str(raw_input("Select your number (please don't press space, put number directly next to this!)"))
+if(a == "1"):
+    b = str(raw_input("Please type your appointment"))
+    c = str(raw_input("What time does your appointment start?"))
+    d = str(raw_input("What time does your appointment end?"))
+    e = str(raw_input("What day of the week is you appointment?"))
+    k = str(raw_input("What month is your appointment?"))
+    app = "\n"+b+" at "+c+"-"+d+" on "+e+" through "+k+";"
+    x = open('Calendar', 'a')
+    x.write(app)
+if(a == "2"):
+    f = str(raw_input("Please type topic"))
+    print(f)
+    for line in x.xreadlines():
+        if(f in line):
+            print line
+if(a == "3"):
+    h = str(raw_input("Please type day of week"))
+    print(h)
+    for line in x.xreadlines():
+        if(h in line):
+            print line
+if(a == "4"):
+    j = str(raw_input("Please type an hour"))
+    print(j)
+    for line in x.xreadlines():
+        if(j in line):
+            print line
+if(a == "5"):
+    for line in x.xreadlines():
+        print line
+x.close()
